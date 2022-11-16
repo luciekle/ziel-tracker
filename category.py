@@ -1,8 +1,5 @@
 class category:
-    """One individual trackable category: 
-    
-    this tracker (for now) works with a list. 
-    If the date is in the list, the habit is considered 'tracked'"""
+    """Methods for handeling everything related to tracking a single category"""
 
     import tracker
     from datetime import datetime
@@ -27,10 +24,19 @@ class category:
 
     """change any date from checked to unchecked or vice-versa"""
     def change(self, date):
-        if (date in self.tracker):
+        if (date in self.t):
             self.t.delete(self, date)
         else: self.t.add_new(self, date)
     
+    """check if a date was tracked"""
+    def check(self, date):
+        return True if (date in self.t) else False
 
-#TODO: add a method to check if a day was tracked
-    
+# danger zone
+    """clear all tracked data"""
+    def clear_tracker(self):
+        self.t = []
+        
+    """delete this entire tracker with all data"""
+    def delete_tracker(self):
+        del self.t
