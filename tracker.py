@@ -17,6 +17,7 @@ class tracker:
     """remove any date from the tracker"""
     def delete(self, date):
         self.t.remove(date)
+    
 
     def __(self):
         for i in self.t:

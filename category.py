@@ -1,4 +1,4 @@
-import tracker
+import tracker, json
 from datetime import datetime
 
 class category:
@@ -8,6 +8,31 @@ class category:
         #TODO: make sure name is a string
         self.name = name
         self.t = tracker()
+        
+    
+    def start(self):
+        print(f"Hallo!\n")
+        go = input("Möchtest du eine neue Kategorie tracken? [y/n]")
+        if (go == "y"):
+            #TODO: Prüfen, ob Kategorie schon existiert
+            cat_name = input("Was möchtest du tracken?")
+            cat = category(cat_name)
+    
+        go = input("Möchtest du für heute etwas tracken? [y/n]")
+        if (go == "y"):
+            #TODO: cat_list printen mit Zahlen
+            #for (i in cat_list) print(f"[\i] \cat_list[i]")
+            cat_number = input("Bitte wähle deine Kategorie:")
+            #cat = cat_list[cat_number]
+            cat.add_today()
+
+        go = input("Möchtest du deine Gewohnheiten analysieren? [y/n]")
+        if (go == "y"):
+            print("[1] Graph")
+            vis = input("Wie möchtest du deine Daten darstellen?")
+            # TODO: Go Nicole!
+        
+        print("byeee <3")
 
 # getters and setters for the category's name
     def get_name(self):
