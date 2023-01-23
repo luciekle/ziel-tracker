@@ -1,10 +1,11 @@
+import tracker
+from datetime import datetime
+
 class category:
     """Methods for handeling everything related to tracking a single category"""
 
-    import tracker
-    from datetime import datetime
-    
     def __init__(self, name):
+        #TODO: make sure name is a string
         self.name = name
         self.t = tracker()
 
@@ -38,5 +39,5 @@ class category:
         self.t = []
         
     """delete this entire tracker with all data"""
-    def delete_tracker(self):
+    def __del__(self):
         del self.t
